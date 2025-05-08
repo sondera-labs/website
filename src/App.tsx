@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="w-screen h-screen overflow-auto">
       <div className=" w-full min-h-full flex flex-col bg-primary p-6 sm:p-12 items-center">
-        <div className="flex flex-col gap-12 max-w-[1100px] ">
+        <div className="flex flex-col gap-8 mb-8 sm:gap-12 max-w-[1100px] ">
           <div className="w-full h-36 sm:h-64 rounded-lg overflow-hidden relative">
             <img src={Gradient} alt="gradient" className="w-full h-full object-fill" />
             <img src={Logo} alt="logo" className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 w-34 sm:w-48" />
