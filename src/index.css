@@ -5,23 +5,40 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+
+  --background: oklch(0.99 0.0027 106.45);
+  --foreground: oklch(0.24 0.0074 95.37);
+
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.24 0.0074 95.37);
+
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --popover-foreground: oklch(0.24 0.0074 95.37);
+
+  --primary: oklch(0.24 0.0074 95.37);
+  --primary-foreground: oklch(0.99 0.0027 106.45);
+  --lighter-text: oklch(0.5 0.009 106.72);
+
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
+
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+
+  --accent: oklch(0.49 0.0946 163.84);
+  --accent-foreground: oklch(0.99 0.0027 106.45);
+
+  --destructive: oklch(0.64 0.2078 25.33);
+  --destructive-foreground: oklch(0.98 0.0035 247.86);
+
+  --warning: oklch(0.82 0.162739 85.1691);
+  --warning-foreground: oklch(0.66 0.131339 85.4952);
+
+  --success: oklch(0.69 0.1829 142.23);
+  --success-foreground: oklch(0.98 0.0028 236.48);
+
+  --border: oklch(0.89 0.004 91.45);
+  --input: oklch(0.9 0.0103 225.11);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -51,6 +68,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-lighter-text: var(--lighter-text);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -58,6 +76,11 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -74,6 +97,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-family: "Family", sans-serif;
+  --font-lausanne: "TWKLausanne", sans-serif;
 }
 
 .dark {
@@ -116,5 +141,166 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  #app {
+    @apply w-screen h-screen overflow-auto;
+  }
+  body {
+    @apply overflow-hidden bg-background text-foreground p-0 m-0 font-lausanne relative;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 33, 47, 0.075);
+  border-radius: 100px;
+  transition: all 0.1s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 33, 47, 0.15);
+}
+
+@layer base {
+  @font-face {
+    font-family: "Family";
+    src: url("assets/fonts/Family/Family-Italic.woff2") format("woff2"), url("assets/fonts/Family/Family-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Family";
+    src: url("assets/fonts/Family/Family-Regular.woff2") format("woff2"), url("assets/fonts/Family/Family-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 250";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-250.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-250.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 250";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-250Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-250Italic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 300";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-300.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-300.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 200";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-200.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-200.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 300";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-300Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-300Italic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 200";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-200Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-200Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 400";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-400.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-400.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 500";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-500Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-500Italic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 400";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-400Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-400Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 450";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-450.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-450.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 350";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-350Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-350Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 350";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-350.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-350.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 450";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-450Italic.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-450Italic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "TWKLausanne 500";
+    src: url("assets/fonts/TWKLausanne/TWKLausanne-500.woff2") format("woff2"), url("assets/fonts/TWKLausanne/TWKLausanne-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
 }
