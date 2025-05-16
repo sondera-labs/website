@@ -141,6 +141,9 @@
 }
 
 @layer base {
+  #root {
+    @apply w-screen h-screen overflow-auto;
+  }
   body {
     @apply bg-primary text-foreground font-lausanne p-0 m-0 relative;
   }
