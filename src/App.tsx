@@ -8,6 +8,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingScreen />} />
         {import.meta.env.DEV && <Route path="/demo" element={<DemoScreen />} />}
+        <Route path="*" element={<LandingScreen />} />
       </Routes>
     </BrowserRouter>
   );
